@@ -1,5 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import EmptyState from '../components/empty-state/empty-state';
+import Navbar from '../components/navbar/navbar';
 import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -8,16 +10,8 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to test-app!</title>
       </Head>
-      <div className="app">
-        <header className="flex">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/nx-logo-white.svg" alt="Nx logo" width="75" height="50" />
-          <h1>Welcome to test-app!</h1>
-        </header>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
+      <Navbar />
+      <EmptyState />
     </>
   );
 }
